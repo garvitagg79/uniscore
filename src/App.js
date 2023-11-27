@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 
 // Function to calculate the score based on standard deviation and average
@@ -6,14 +7,18 @@ const calculateScore = (parsedScore, average, sd) => {
   if (average > 80) average -= average * 0.1;
   if (average < 60) average += average * 0.1;
   let normal = (parsedScore - average) / sd;
-  if (normal > 1.5) return 10;
+  if (normal > 1.5 && parsedScore >= 85) return 10;
+  if (normal > 1.5 && parsedScore < 85) return 9;
   if (normal > 1.0 && normal <= 1.5) return 9;
   if (normal > 0.5 && normal <= 1.0) return 8;
   if (normal > 0.0 && normal <= 0.5) return 7;
   if (normal > -0.5 && normal <= 0.0) return 6;
-  if (normal > -1.0 && normal <= -0.5) return 5;
-  if (normal > -1.5 && normal <= -1.0) return 4;
+  if (normal > -1.0 && normal <= -0.5 && parsedScore >= 70) return 6;
+  if (normal > -1.0 && normal <= -0.5 && parsedScore < 70) return 5;
+  if (normal > -1.5 && normal <= -1.0 && parsedScore >= 60) return 5;
+  if (normal > -1.5 && normal <= -1.0 && parsedScore < 60) return 4;
   // Add more conditions as needed
+  if (parsedScore > 54) return 4;
   return 0; // Default score if none of the conditions are met
 };
 
@@ -133,6 +138,7 @@ function App() {
           <Course key={index} {...course} />
         ))}
       </div>
+      <Analytics />
     </div>
   );
 }
