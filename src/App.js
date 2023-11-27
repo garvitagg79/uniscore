@@ -12,7 +12,8 @@ const calculateScore = (parsedScore, average, sd) => {
   if (normal > 0.5 && normal <= 1.0) return 8;
   if (normal > 0.0 && normal <= 0.5) return 7;
   if (normal > -0.5 && normal <= 0.0) return 6;
-  if (normal > -1.0 && normal <= -0.5) return 5;
+  if (normal > -1.0 && normal <= -0.5 && parsedScore >= 70) return 6;
+  if (normal > -1.0 && normal <= -0.5 && parsedScore < 70) return 5;
   if (normal > -1.5 && normal <= -1.0) return 4;
   // Add more conditions as needed
   if (parsedScore > 54) return 4;
