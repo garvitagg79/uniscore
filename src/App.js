@@ -6,7 +6,8 @@ const calculateScore = (parsedScore, average, sd) => {
   if (average > 80) average -= average * 0.1;
   if (average < 60) average += average * 0.1;
   let normal = (parsedScore - average) / sd;
-  if (normal > 1.5) return 10;
+  if (normal > 1.5 && parsedScore >= 85) return 10;
+  if (normal > 1.5 && parsedScore < 85) return 9;
   if (normal > 1.0 && normal <= 1.5) return 9;
   if (normal > 0.5 && normal <= 1.0) return 8;
   if (normal > 0.0 && normal <= 0.5) return 7;
