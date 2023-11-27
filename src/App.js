@@ -121,6 +121,18 @@ function App() {
       sd: 10.30668247,
     },
     {
+      name: "The Science of Happiness and Wellbeing",
+      initialScore: 100,
+      average: 55.93828715,
+      sd: 8.797997599,
+    },
+    {
+      name: "Yoga And Positive Psychology For Managing Career And Life",
+      initialScore: 100,
+      average: 67.03019744,
+      sd: 11.95598589,
+    },
+    {
       name: "Design & Implementation Of Human-Computer Interfaces",
       initialScore: 100,
       average: 64.46464646,
