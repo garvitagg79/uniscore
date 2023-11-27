@@ -28,6 +28,103 @@
   color: #61dafb;
 }
 
+.course-container {
+  margin: 0 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+
+  h2 {
+    margin-bottom: 5px;
+  }
+
+    .course-container button {
+      background-color: #3498db;
+      /* Set your desired background color */
+      color: #fff;
+      /* Set text color to white */
+      padding: 10px 15px;
+      /* Adjust padding for better button appearance */
+      cursor: pointer;
+      border: none;
+      margin-top: 10px;
+      border-radius: 5px;
+      /* Optional: Add border-radius for rounded corners */
+    }
+  
+    .course-container button:hover {
+      background-color: #2980b9;
+      /* Set your desired hover background color */
+    }
+}
+
+.app-container {
+  position: relative;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 4px 2px -2px gray;
+  padding: 20px;
+  z-index: 1000;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.courses-container {
+  margin-top: 90px;
+  padding-top: 20px;
+}
+
+.course-container h2 {
+  font-size: 18px;
+}
+
+/* Media query for smaller screens (e.g., mobile devices) */
+/* Media query for smaller screens (e.g., mobile devices) */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px;
+    /* Adjust padding for smaller screens */
+  }
+
+  .header h1 {
+    font-size: 24px;
+    /* Adjust font size for smaller screens */
+  }
+
+  .courses-container {
+    margin-top: 60px;
+    /* Adjust margin-top for smaller screens */
+    padding-top: 10px;
+    /* Adjust padding-top for smaller screens */
+  }
+}
+
+
+/* Add your existing styling for the course-container, h2, etc. here */
+
+/* Add your existing styling for the course-container, h2, etc. here */
+
+/* Add your existing styling for the course-container, h2, etc. here */
+
+/* Add your existing styling for the course-container, h2, etc. here */
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
