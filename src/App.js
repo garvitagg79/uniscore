@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import "./App.css";
 
 // Function to calculate the score based on standard deviation and average
@@ -18,7 +19,7 @@ const calculateScore = (parsedScore, average, sd) => {
   if (normal > -1.5 && normal <= -1.0 && parsedScore >= 60) return 5;
   if (normal > -1.5 && normal <= -1.0 && parsedScore < 60) return 4;
   // Add more conditions as needed
-  if (parsedScore > 54) return 4;
+  if (parsedScore > 47) return 4;
   return 0; // Default score if none of the conditions are met
 };
 
@@ -121,6 +122,18 @@ function App() {
       sd: 10.30668247,
     },
     {
+      name: "The Science of Happiness and Wellbeing",
+      initialScore: 100,
+      average: 55.93828715,
+      sd: 8.797997599,
+    },
+    {
+      name: "Yoga And Positive Psychology For Managing Career And Life",
+      initialScore: 100,
+      average: 67.03019744,
+      sd: 11.95598589,
+    },
+    {
       name: "Design & Implementation Of Human-Computer Interfaces",
       initialScore: 100,
       average: 64.46464646,
@@ -138,6 +151,7 @@ function App() {
           <Course key={index} {...course} />
         ))}
       </div>
+      <SpeedInsights />
       <Analytics />
     </div>
   );
